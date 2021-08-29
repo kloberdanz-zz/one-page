@@ -1,0 +1,678 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: Oswald;
+}
+
+/* preloader */
+
+.centrado{
+    height: 100vh;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hidden {
+    overflow: hidden;
+}
+.lds-roller {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-roller div {
+    animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    transform-origin: 40px 40px;
+  }
+  .lds-roller div:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: white;
+    margin: -4px 0 0 -4px;
+  }
+  .lds-roller div:nth-child(1) {
+    animation-delay: -0.036s;
+  }
+  .lds-roller div:nth-child(1):after {
+    top: 63px;
+    left: 63px;
+  }
+  .lds-roller div:nth-child(2) {
+    animation-delay: -0.072s;
+  }
+  .lds-roller div:nth-child(2):after {
+    top: 68px;
+    left: 56px;
+  }
+  .lds-roller div:nth-child(3) {
+    animation-delay: -0.108s;
+  }
+  .lds-roller div:nth-child(3):after {
+    top: 71px;
+    left: 48px;
+  }
+  .lds-roller div:nth-child(4) {
+    animation-delay: -0.144s;
+  }
+  .lds-roller div:nth-child(4):after {
+    top: 72px;
+    left: 40px;
+  }
+  .lds-roller div:nth-child(5) {
+    animation-delay: -0.18s;
+  }
+  .lds-roller div:nth-child(5):after {
+    top: 71px;
+    left: 32px;
+  }
+  .lds-roller div:nth-child(6) {
+    animation-delay: -0.216s;
+  }
+  .lds-roller div:nth-child(6):after {
+    top: 68px;
+    left: 24px;
+  }
+  .lds-roller div:nth-child(7) {
+    animation-delay: -0.252s;
+  }
+  .lds-roller div:nth-child(7):after {
+    top: 63px;
+    left: 17px;
+  }
+  .lds-roller div:nth-child(8) {
+    animation-delay: -0.288s;
+  }
+  .lds-roller div:nth-child(8):after {
+    top: 56px;
+    left: 12px;
+  }
+  @keyframes lds-roller {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } 
+/* finish preloader   */
+
+/* inicial de tres datos */
+.initial {
+    background-color: rgb(240, 231, 231);
+    font-size: .8em;
+    font-weight: 900;
+    padding: 3px;
+}
+
+.colum {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
+
+.colum p {
+    text-align: center;
+    align-items: center;
+    color: black;
+}
+
+/* finish inicial tres datos empresa */
+/* navbar */
+nav {
+    background: #c9110e;
+    padding: 5px 20px;
+  }
+  ul {
+    list-style-type: none;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .logo a:hover {
+    text-decoration: none;
+  }
+  .menu li {
+    
+    background: #c9110e;
+    font-size: 16px;
+    padding: 15px 5px;
+    white-space: nowrap;
+  }
+  .logo a,
+  .toggle a {
+    font-size: 20px;
+  }
+  .button.secondary {
+    border-bottom: 1px #444 solid;
+  }
+  
+  /* Mobile menu */
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .toggle {
+    order: 1;
+  }
+  .item.button {
+    order: 2;
+  }
+  .item {
+    width: 100%;
+    text-align: center;
+    order: 3;
+    display: none;
+  }
+  .item.active {
+    display: block;
+  }
+  
+  /* Navbar Toggle */
+  .toggle {
+    cursor:pointer;
+  }
+  .bars {
+    background: rgb(255, 255, 255);
+    display: inline-block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+  }
+  .bars:before,
+  .bars:after {
+    background: rgb(255, 255, 255);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+  }
+  .bars:before {
+    top: 5px;
+  }
+  .bars:after {
+    top: -5px;
+  }
+  
+  /* Tablet menu */
+  @media all and (min-width: 468px) {
+    .menu {
+        justify-content: center;
+    }
+  
+    .logo {
+        flex: 1;
+    }
+  
+    .item.button {
+        width: auto;
+        order: 1;
+        display: block;
+    }
+    .toggle {
+        order: 2;
+    }
+    .button.secondary {
+        border: 0;
+    }
+    .button a {
+        padding: 7.5px 15px;
+        background: teal;
+        border: 1px #006d6d solid;
+        border-radius:50em;
+    }
+    .button.secondary a {
+        background: transparent;    
+    }
+    .button a:hover {
+        text-decoration: none;
+        transition:all .25s;
+    }
+    .button:not(.secondary) a:hover {
+        background: #006d6d;
+        border-color: #005959;
+    }
+    .button.secondary a:hover {
+        color: #ddd;
+    } 
+  }
+  
+  /* Desktop menu */
+  @media all and (min-width: 768px) {
+    .item {
+        display: block;
+        width: auto;
+    }
+    .toggle {
+        display: none;
+    }
+    .logo {
+        order: 0;
+    }
+    .item {
+        order: 1;
+    }
+    .button {
+        order: 2;
+    }
+    .menu li {
+        padding: 15px 10px;
+    }
+    .menu li.button {
+        padding-right: 0;
+    }
+}
+
+  /* finish responsive nav bar */
+
+  /*nosotros*/
+
+.laprim {
+   background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(../img/front.jpg);
+   background-size: cover;
+   color: rgb(111, 149, 221);
+}
+
+.laprim p {
+    font-size: 1.5em;
+    color: white;
+    text-align: center;
+}
+.laprim img{
+  max-width: 150px;
+}
+.logog{
+  margin-left: 0;
+}
+.ult{
+  margin-bottom: 150px;
+}
+
+/* responsive */
+
+@media all and (min-width: 768px) {
+    .laprim {
+        padding: 50px 5px;
+    }
+    .laprim h1 {
+        font-size: 5em;
+    }
+    .laprim p {
+        font-size: 3em;
+    }
+}
+
+/*nosotros*/
+#nosotros {
+    padding-top: 20px ;
+    padding-bottom: 20px;
+}
+#nosotros .text_nos{
+  text-align: center;
+  justify-content: center;
+  font-size: 1.5em;
+}
+#nosotros .title_nos{
+
+  font-size: 3em;
+  text-align: center;
+  justify-content: center;
+  color: black;
+}
+
+
+
+/* Servicios */
+.titleServ {
+    text-align: center;
+    font-size: 3em;
+    color: black;
+}
+
+.grid {
+    margin: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    align-items: stretch;
+    }
+  
+  .grid > article {
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+    border-radius: 3px;
+    text-align: center;
+  }
+  
+  .grid > article:hover{
+    transition: transform .1s ease-out;
+    transform: translateY(5px);
+  }
+  
+  .grid > article img {
+    width: 100%;
+  }
+  
+  
+  .textserv {
+    padding: 0 20px 20px;
+  }
+  
+  .textserv > h3{
+    text-transform: uppercase;
+    color: black;
+  }
+  
+  .textserv > button {
+    background: linear-gradient(to right, #fc0303, #d12121, #b84f4f);
+    border-radius: 3px;
+    border: 0;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    font-weight: 600;
+    text-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+    text-transform: uppercase;
+  }
+  
+  
+  @media (max-width: 768px){
+    .grid{
+      grid-template-columns: repeat(2, 1fr);
+      margin: 0;
+    }
+    .ult{
+  margin-bottom: 10px;
+}
+  }
+  
+  @media (max-width: 500px){
+    .grid{
+      grid-template-columns: repeat(1, 1fr);
+      margin: 0;
+    }
+    .ult{
+  margin-bottom: 0px;
+}
+  
+    .grid > article{
+      text-align: center;
+    }
+}
+
+/* Preguntas Frecuentes */
+.preguntasFrecuentes{
+    background-color: #e8bcbc;
+    margin-bottom: 10px;
+}
+.preguntasFrecuentes h1 {
+    text-align: center;
+    font-size: 3em;
+    color: #121212;
+}
+.preguntasFrecuentes h2 {
+    text-align: center;
+    font-size: 1.5em;
+    color:#121212;
+}
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+.accordion:hover {
+  background-color: #cfa7a7;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+
+  /* Formulario */
+
+  /* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */ 
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  }
+  input[type=tel], select, textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */ 
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  }
+  input[type=email], select, textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */ 
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  }
+  
+  /* Style the submit button with a specific background color etc */
+  input[type=submit] {
+    background-color: #fc0303;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* When moving the mouse over the submit button, add a darker green color */
+  input[type=submit]:hover {
+    background-color: #b84f4f;
+  }
+  
+  /* Add a background color and some padding around the form */
+  .containerForm {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+.textContact {
+    text-align: center;
+    font-size: 3em;
+    color:black;
+}
+
+/* footer */
+footer {
+    background-color: #121212;
+    
+}
+footer p, h1, h2, h3 {
+    color: #fff;
+}
+footer a {
+    color:rgb(165, 15, 179);
+}
+
+.derechos {
+  padding-top: 40px;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.desarrollado {
+    font-size: 1em;
+    text-align: center;
+}
+
+
+footer   {
+    padding-top: 50px;
+    text-align: center;
+    justify-content: center;
+}
+
+.bichi img{
+  max-width: 150px;
+}
+
+.whats{
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: white;
+  padding: 8px;
+  border-radius: 100%;
+}
+
+i {
+  color: #16e016;
+  font-size: 3em;
+
+}
+
+
+
+/* caroucel */
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: black;
+  font-size: 2em;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+/* caroucel */
